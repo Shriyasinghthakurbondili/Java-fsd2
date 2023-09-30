@@ -1,0 +1,30 @@
+package seleniumScripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LocatorsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// step 1: open the browser
+		
+		WebDriver driver = new ChromeDriver();
+		
+	// Maxamize the browser window- we will see browser window methods
+		
+		driver.manage().window().maximize();
+    /* Tagname and class name locator:
+	   
+	   driver.navigate().to("https://www.redbus.com/");
+	   
+	   // These elements return many tags, so its not comminly used
+	   
+	   driver.findElement(By.tagName("(//input)[1]")).sendKeys("Paris");
+		
+      driver.findElement(By.className("sc-jlyJG kxRJeL")).sendKeys("london"); */
+  }
+}
