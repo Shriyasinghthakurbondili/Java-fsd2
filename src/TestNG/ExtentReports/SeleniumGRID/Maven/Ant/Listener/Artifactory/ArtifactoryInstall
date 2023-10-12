@@ -1,1 +1,79 @@
+This section will guide you:
+●	To understand Artifactory
+●	To install Artifactory
+●	To configure Artifactory with Jenkins
+
+Development Environment: 
+●	Jenkins
+●	Artifactory
+
+This guide has three sub-sections, namely:
+2.1.1	Installing Artifactory
+2.1.2	Setting up Artifactory with Jenkins
+2.1.3	Pushing the code into GitHub repositories
+
+
+Step 2.1.1: Installing Artifactory
+●	Go to this link: https://jfrog.com/open-source/#artifactory.
+●	Download the tar.gz file as shown in the following screenshot
+
+
+
+
+ 
+ 
+●	Use the following command to extract the tar file.
+cd Downloads
+tar -xvf jfrog-artifactory-oss-7.5.5-linux.tar.gz
+ 
+●	The tar file will be extracted in a directory named artifactory-oss-7.5.5
+●	Open the command prompt and go to the bin of the Artifactory folder and run the following commands:
+cd Downloads/artifactory-oss-7.5.5/artifactory/app/bin
+sudo ./installService.sh
+ 
+●	Now, run the command: 
+systemctl start artifactory.service
+ 
+●	Now, go to the browser type- localhost:8081.
+●	Enter the following details:
+ID : admin
+Password: password
+        	 
+●	Click on ‘Welcome Admin.’
+●	Click on ‘Quick Setup.’
+●	Create a maven repository.
+ 
+
+Step 2.1.2: Setting up Artifactory with Jenkins
+●	Jenkins is already installed in your practice lab. Refer to QA to QE lab guide for Phase 2 for more information.
+●	Open command line and run the following command:
+sudo less /var/lib/jenkins/secrets/initialAdminPassword
+●	Copy the password displayed in the command line
+●	Go to localhost:8080 in the browser and paste the password in the given field
+●	Click on install suggested plugins
+●	Go to ‘Manage Jenkins.’
+●	Click on ‘Manage Plugin.’
+●	Select the available tab.
+●	Search for Artifactory.
+ 
+●	Again, go to ‘Manage Jenkins.’ 
+●	Go to ‘Configure System.’
+●	There is an option Artifactory.
+●	Select ‘Add Artifactory.’
+●	Pass the artifactory localhost URL.
+●	Now, pass the credentials.
+●	Click on ‘Apply’ and ‘Save.’ 
+ 
+
+Step 2.1.3: Pushing the Code to GitHub Repositories
+Open your command prompt and navigate to the folder where you have created your files.
+cd <folder path>
+Initialize your repository using the following command:
+git init
+Add all the files to your git repository using the following command:
+git add . 
+Commit the changes using the following command:
+git commit .  -m “Changes have been committed.”
+Push the files to the folder you initially created using the following command:
+git push -u origin master
 
